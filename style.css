@@ -1,33 +1,265 @@
+
+/* Základní vzhled stránky */
+
+:root {
+  color-scheme: light dark;
+  --background: #f1f5f9;
+  --surface: #ffffff;
+  --text: #172033;
+  --link: #0645ad;
+  --border: #cbd5e1;
+  --accent: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--background);
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.15em;
+}
+
+.site-header {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: var(--surface);
+  border-bottom: 0.2rem solid var(--accent);
+}
+
+.site-header h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  font-weight: bold;
+}
+
+main {
+  width: min(100% - 2rem, 70rem);
+  margin: 2rem auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+.card {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.project-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: var(--surface);
+}
+
+caption {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 0.0625rem solid var(--border);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+th {
+  font-weight: bold;
+}
+
+address {
+  font-style: normal;
+}
+
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--surface);
+  border-top: 0.0625rem solid var(--border);
+}
+
+/* Odkaz pro přeskočení navigace */
+
+.skip-link {
+  position: absolute;
+  top: -10rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  background: #172033;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Viditelné označení prvku při ovládání klávesnicí */
+
+:focus-visible {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.2rem;
+}
+
+/* Tablet */
+
 @media (min-width: 40em) {
-  /* TODO */
-}
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-@media (min-width: 60em) {
-  /* TODO */
-}
-
-@media (min-width: 80em) {
-  /* TODO */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* TODO */
+  main {
+    margin-top: 3rem;
   }
 }
 
-@media (prefers-contrast: more) {
-  /* TODO */
+/* Větší obrazovky */
+
+@media (min-width: 60em) {
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .site-header {
+    padding: 4rem 2rem;
+  }
 }
+
+/* Široké obrazovky */
+
+@media (min-width: 80em) {
+  main {
+    max-width: 75rem;
+  }
+}
+
+/* Tmavý režim */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111827;
+    --surface: #1f2937;
+    --text: #f9fafb;
+    --link: #a9c8ff;
+    --border: #64748b;
+    --accent: #93c5fd;
+  }
+}
+
+/* Vyšší kontrast */
+
+@media (prefers-contrast: more) {
+  :root {
+    --border: currentColor;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .card {
+    border-width: 0.15rem;
+  }
+}
+
+/* Omezení animací */
 
 @media (prefers-reduced-motion: reduce) {
-  /* TODO */
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
+
+/* Omezení průhlednosti */
 
 @media (prefers-reduced-transparency: reduce) {
-  /* TODO */
+  .card,
+  .site-header,
+  footer {
+    backdrop-filter: none;
+    opacity: 1;
+  }
 }
 
+/* Režim vysokého kontrastu ve Windows */
+
 @media (forced-colors: active) {
-  /* TODO */
+  .card,
+  .site-header,
+  footer {
+    border: 0.1rem solid CanvasText;
+  }
+
+  a {
+    color: LinkText;
+  }
+
+  :focus-visible {
+    outline: 0.2rem solid Highlight;
+  }
 }

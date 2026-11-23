@@ -1,19 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- TODO (tmavý režim): po přidání tmavého schématu změňte content na "light dark" -->
-  <meta name="color-scheme" content="light">
-  <title>TODO: Jméno Příjmení – osobní stránka</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Osobní stránka Samuela Bartolottiho – představení, projekty a dovednosti.">
+  <title>Samuel Bartolotti – osobní stránka</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip-link" href="#obsah">Přejít na obsah</a>
+
+  <a class="skip-link" href="#obsah">Přejít na hlavní obsah</a>
 
   <header class="site-header">
-    <h1>TODO: Jméno Příjmení</h1>
-    <p>TODO: jedna věta o vás.</p>
+    <h1>Samuel Bartolotti</h1>
+    <p>Vítejte na mé osobní stránce. Zajímám se o technologie a tvorbu webových stránek.</p>
+
     <nav aria-label="Hlavní navigace">
       <ul>
         <li><a href="#o-mne">O mně</a></li>
@@ -28,25 +31,71 @@
 
     <section id="o-mne" class="card" aria-labelledby="o-mne-nadpis">
       <h2 id="o-mne-nadpis">O mně</h2>
-      <!-- TODO: vložte fotku nebo obrázek do složky img/, odkomentujte řádek níže
-           a vyplňte výstižný alt (u čistě dekorativního obrázku alt prázdný):
-      -->
-      <p>TODO: pár vět o vás.</p>
+
+      <p>
+        Jmenuji se Samuel Bartolotti. Zajímám se o moderní technologie,
+        počítače a tvorbu webových stránek.
+      </p>
+
+      <p>
+        Tato stránka představuje něco o mně, moje projekty,
+        zájmy a dovednosti, které se postupně učím.
+      </p>
+
+      <p>
+        Ve volném čase se věnuji svým zájmům a rád se učím novým věcem.
+      </p>
     </section>
 
     <section id="projekty" aria-labelledby="projekty-nadpis">
-      <h2 id="projekty-nadpis">Projekty</h2>
-      <!-- TODO: alespoň tři položky, každá s obrázkem. Zkopírujte celý prvek article a upravte ho. -->
-      <article class="card">
-        <h3>TODO: název projektu</h3>
-        <p>TODO: stručný popis projektu.</p>
-      </article>
+      <h2 id="projekty-nadpis">Moje projekty a zájmy</h2>
+
+      <div class="project-grid">
+
+        <article class="card">
+          <h3>Tvorba webových stránek</h3>
+          <img src="img/web.jpg"
+               alt="Notebook zobrazující vytvořenou webovou stránku"
+               width="800" height="450"
+               loading="lazy">
+          <p>
+            Učím se vytvářet webové stránky pomocí HTML a CSS.
+            Zkouším různé možnosti designu a rozvržení stránky.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Programování</h3>
+          <img src="img/programovani.jpg"
+               alt="Počítač s editorem programovacího kódu"
+               width="800" height="450"
+               loading="lazy">
+          <p>
+            Zajímám se o programování a poznávání nových
+            technologií. Postupně rozšiřuji své znalosti.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Technologie</h3>
+          <img src="img/technologie.jpg"
+               alt="Moderní počítačová technika na pracovním stole"
+               width="800" height="450"
+               loading="lazy">
+          <p>
+            Baví mě počítače, moderní technologie a jejich
+            využití v každodenním životě.
+          </p>
+        </article>
+
+      </div>
     </section>
 
-    <section id="dovednosti" aria-labelledby="dovednosti-nadpis">
-      <h2 id="dovednosti-nadpis">Dovednosti</h2>
+    <section id="dovednosti" class="card" aria-labelledby="dovednosti-nadpis">
+      <h2 id="dovednosti-nadpis">Moje dovednosti</h2>
+
       <table>
-        <caption>TODO: popisek tabulky</caption>
+        <caption>Přehled mých současných znalostí</caption>
         <thead>
           <tr>
             <th scope="col">Dovednost</th>
@@ -55,8 +104,16 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">TODO: dovednost</th>
-            <td>TODO: úroveň</td>
+            <th scope="row">HTML</th>
+            <td>Základy</td>
+          </tr>
+          <tr>
+            <th scope="row">CSS</th>
+            <td>Základy</td>
+          </tr>
+          <tr>
+            <th scope="row">Git</th>
+            <td>Učím se</td>
           </tr>
         </tbody>
       </table>
@@ -64,16 +121,20 @@
 
     <section id="kontakt" class="card" aria-labelledby="kontakt-nadpis">
       <h2 id="kontakt-nadpis">Kontakt</h2>
+
       <address>
-        <!-- TODO: e-mail jako odkaz (mailto:), případně město nebo odkaz na profil -->
-        <p>E-mail: <a href="mailto:TODO">TODO</a></p>
+        <p>
+          E-mail:
+          <a href="mailto:tvuj@email.cz">tvuj@email.cz</a>
+        </p>
       </address>
     </section>
 
   </main>
 
   <footer>
-    <p>© TODO: rok a jméno</p>
+    <p>&copy; 2026 Samuel Bartolotti</p>
   </footer>
+
 </body>
 </html>
