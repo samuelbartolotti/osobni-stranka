@@ -1,33 +1,139 @@
+
+/* Základní nastavení – mobil jako výchozí */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  background-color: #f1f5f9;
+  color: #172033;
+}
+
+a {
+  color: #0645ad;
+}
+
+.site-header {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem;
+}
+
+main {
+  width: calc(100% - 2rem);
+  max-width: 75rem;
+  margin: 2rem auto;
+}
+
+.card {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.project-grid img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid #64748b;
+  overflow-wrap: anywhere;
+}
+
+.skip-link {
+  position: absolute;
+  top: -10rem;
+  left: 1rem;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  color: #172033;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* První zlom – větší mobil a malý tablet */
 @media (min-width: 40em) {
-  /* TODO */
-}
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-@media (min-width: 60em) {
-  /* TODO */
-}
+  .card {
+    padding: 1.5rem;
+  }
 
-@media (min-width: 80em) {
-  /* TODO */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* TODO */
+  nav ul {
+    gap: 1rem;
   }
 }
 
-@media (prefers-contrast: more) {
-  /* TODO */
+/* Druhý zlom – notebook */
+@media (min-width: 60em) {
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .site-header {
+    padding: 3rem;
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  /* TODO */
+/* Třetí zlom – široký monitor */
+@media (min-width: 80em) {
+  main {
+    max-width: 75rem;
+  }
+
+  .project-grid {
+    gap: 1.5rem;
+  }
 }
 
-@media (prefers-reduced-transparency: reduce) {
-  /* TODO */
-}
-
-@media (forced-colors: active) {
-  /* TODO */
-}
+/* Ostatní media rules doplníme v dalších větvích. */
